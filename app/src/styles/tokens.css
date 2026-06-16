@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+  --ink:           oklch(0.12 0.035 42);   /* deep mahogany — replaces cold charcoal */
+  --charcoal:     oklch(0.17 0.038 42);
+  --smoke:        oklch(0.22 0.032 44);
+  --ash:          oklch(0.30 0.025 46);
+  --slate:        oklch(0.44 0.018 50);
+
+  --amber:        oklch(0.80 0.15 72);    /* slightly richer gold */
+  --amber-bright: oklch(0.87 0.16 76);
+  --amber-deep:   oklch(0.63 0.14 58);
+  --honey:        oklch(0.90 0.12 86);
+
+  --bone:         oklch(0.96 0.018 82);   /* warmer white */
+  --cream:        oklch(0.89 0.022 80);
+  --paper:        oklch(0.97 0.012 82);
+
+  --burgundy:     oklch(0.40 0.10 25);
+  --forest:       oklch(0.42 0.06 145);
+  --rust:         oklch(0.58 0.13 40);
+
+  --success:      oklch(0.68 0.12 150);
+  --warning:      oklch(0.78 0.13 75);
+  --danger:       oklch(0.60 0.18 28);
+  --info:         oklch(0.65 0.09 230);
+
+  --bg:           var(--ink);
+  --bg-elev-1:    var(--charcoal);
+  --bg-elev-2:    var(--smoke);
+  --bg-elev-3:    var(--ash);
+
+  --fg-1:         var(--bone);
+  --fg-2:         var(--cream);
+  --fg-3:         var(--slate);
+  --fg-disabled:  oklch(0.35 0.006 60);
+
+  --border-1:     oklch(0.28 0.01 60 / 0.6);
+  --border-2:     oklch(0.40 0.01 60 / 0.5);
+  --border-amber: oklch(0.78 0.13 75 / 0.35);
+
+  --accent:       var(--amber);
+  --accent-hover: var(--amber-bright);
+  --accent-press: var(--amber-deep);
+  --on-accent:    var(--ink);
+
+  --font-display: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+  --font-body:    "Manrope", "Helvetica Neue", Helvetica, sans-serif;
+  --font-mono:    "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+
+  --fs-12:  0.75rem;
+  --fs-13:  0.8125rem;
+  --fs-14:  0.875rem;
+  --fs-16:  1rem;
+  --fs-18:  1.125rem;
+  --fs-20:  1.25rem;
+  --fs-24:  1.5rem;
+  --fs-32:  2rem;
+  --fs-40:  2.5rem;
+  --fs-56:  3.5rem;
+  --fs-80:  5rem;
+
+  --lh-tight:  1.05;
+  --lh-snug:   1.2;
+  --lh-normal: 1.45;
+  --lh-loose:  1.65;
+
+  --tracking-tight:   -0.02em;
+  --tracking-normal:  0em;
+  --tracking-wide:    0.08em;
+  --tracking-eyebrow: 0.18em;
+
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3:  12px;
+  --s-4:  16px;
+  --s-5:  20px;
+  --s-6:  24px;
+  --s-8:  32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-16: 64px;
+  --s-20: 80px;
+  --s-24: 96px;
+
+  --r-xs: 2px;
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 14px;
+  --r-xl: 22px;
+  --r-pill: 999px;
+
+  --shadow-sm:  0 1px 2px oklch(0 0 0 / 0.4);
+  --shadow-md:  0 4px 12px oklch(0 0 0 / 0.35), 0 1px 2px oklch(0 0 0 / 0.5);
+  --shadow-lg:  0 18px 40px -12px oklch(0 0 0 / 0.55), 0 4px 12px oklch(0 0 0 / 0.4);
+  --glow-amber: 0 0 0 1px oklch(0.78 0.13 75 / 0.4), 0 6px 24px oklch(0.78 0.13 75 / 0.18);
+  --inset-hairline: inset 0 1px 0 oklch(1 0 0 / 0.04);
+
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast:   140ms;
+  --dur-base:   220ms;
+  --dur-slow:   420ms;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--fg-1);
+  font-family: var(--font-body);
+  font-size: var(--fs-16);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, .h1 { font-family: var(--font-display); font-weight: 500; font-size: var(--fs-56); line-height: var(--lh-tight); letter-spacing: var(--tracking-tight); }
+h2, .h2 { font-family: var(--font-display); font-weight: 500; font-size: var(--fs-40); line-height: var(--lh-snug); letter-spacing: var(--tracking-tight); }
+h3, .h3 { font-family: var(--font-display); font-weight: 500; font-size: var(--fs-32); line-height: var(--lh-snug); }
+h4, .h4 { font-family: var(--font-body); font-weight: 600; font-size: var(--fs-20); line-height: var(--lh-snug); letter-spacing: -0.005em; }
+h5, .h5 { font-family: var(--font-body); font-weight: 600; font-size: var(--fs-16); line-height: var(--lh-snug); }
+
+p, .body { font-family: var(--font-body); font-weight: 400; font-size: var(--fs-16); line-height: var(--lh-normal); color: var(--fg-2); text-wrap: pretty; }
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-12);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--amber);
+}
+
+.quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--fs-24);
+  line-height: var(--lh-snug);
+  color: var(--fg-1);
+}
+
+a {
+  color: var(--amber);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-amber);
+  transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+a:hover { color: var(--amber-bright); border-bottom-color: var(--amber); }
+
+::selection { background: var(--amber); color: var(--ink); }
