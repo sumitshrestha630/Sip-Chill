@@ -918,3 +918,146 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   background: linear-gradient(to bottom, #F5E4CC 0%, var(--ink) 100%);
   height: 80px;
 }
+
+/* ── Hamburger ───────────────────────────────────────────── */
+.sf-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  flex-shrink: 0;
+}
+.sf-hamburger-icon,
+.sf-hamburger-icon::before,
+.sf-hamburger-icon::after {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--bone);
+  border-radius: 2px;
+  transition: transform 260ms var(--ease-out), opacity 200ms;
+  position: relative;
+}
+.sf-hamburger-icon::before,
+.sf-hamburger-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+.sf-hamburger-icon::before { top: -6px; }
+.sf-hamburger-icon::after  { top:  6px; }
+.sf-hamburger-icon.open               { background: transparent; }
+.sf-hamburger-icon.open::before { transform: translateY(6px) rotate(45deg); }
+.sf-hamburger-icon.open::after  { transform: translateY(-6px) rotate(-45deg); }
+
+.sf-nav--desktop { display: flex; }
+.sf-nav--mobile  { display: none; }
+
+/* ── Mobile breakpoint ───────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* Header */
+  .sf-hamburger { display: flex; }
+  .sf-nav--desktop { display: none; }
+  .sf-search-btn { display: none; }
+
+  .sf-nav--mobile {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: oklch(0.97 0.018 74 / 0.98);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border-1);
+    padding: 16px 24px 24px;
+    gap: 0;
+    z-index: 49;
+  }
+  .sf-nav--mobile a {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--bone);
+    border: none;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-1);
+  }
+  .sf-nav--mobile a:last-child { border-bottom: none; }
+
+  .sf-header-inner {
+    display: grid;
+    grid-template-columns: 40px 1fr 80px;
+    align-items: center;
+  }
+  .sf-logo { justify-self: center; }
+  .sf-actions { justify-self: end; }
+
+  /* Promo banner */
+  .sf-promo { font-size: 12px; padding: 9px 36px; }
+
+  /* Hero */
+  .sc-hero2 { padding: 60px 24px 48px; }
+
+  /* Collections */
+  .sc-collections { padding: 40px 20px 40px; }
+  .sc-collections-track { gap: 10px; }
+  .sc-coll-card { width: 150px; }
+  .sc-coll-img  { height: 120px; }
+  .sc-coll-label { font-size: 12px; }
+
+  /* Trending */
+  .sc-trending { padding: 0 20px 48px; }
+  .sc-trending-track { gap: 12px; }
+  .sc-trend-card { width: 140px; }
+  .sc-trend-img  { height: 170px; }
+
+  /* Category strip */
+  .sf-cat-strip { padding: 14px 20px; gap: 8px; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .sf-cat-strip::-webkit-scrollbar { display: none; }
+  .cat-chip { flex-shrink: 0; }
+  .sf-cat-right { display: none; }
+
+  /* Product grid — 2 columns */
+  .sf-section { padding: 24px 20px 48px; }
+  .sf-section-header { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 20px; }
+  .sf-section-header h2 { font-size: 32px; }
+  .sf-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .product-name { font-size: 14px; }
+  .product-sub  { font-size: 11px; }
+
+  /* Gallery */
+  .sf-gallery { padding: 40px 20px; }
+  .sf-gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
+  .sf-gallery-grid .tall { grid-row: span 1; }
+  .sf-gallery-grid .wide { grid-column: span 2; }
+
+  /* Editorial */
+  .sf-edit-inner { flex-direction: column; }
+  .sf-edit-image { min-height: 240px; }
+
+  /* Reviews */
+  .sf-reviews { padding: 40px 20px; }
+  .sf-reviews-grid { grid-template-columns: 1fr; }
+
+  /* Location */
+  .sf-location { padding: 40px 20px; }
+  .sf-location-inner { grid-template-columns: 1fr; gap: 32px; }
+  .sf-location-map { height: 240px; }
+
+  /* Footer */
+  .sf-footer { padding: 48px 24px 32px; }
+  .sf-footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .sf-footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+
+  /* Cart drawer */
+  .cart-drawer { width: 100%; }
+
+  /* Daiquiri drawer */
+  .daiq-drawer { width: 100%; }
+}
