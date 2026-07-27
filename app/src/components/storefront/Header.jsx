@@ -1,12 +1,12 @@
 import Icon from '../Icon';
 import logoWordmark from '../../assets/logo-wordmark.svg';
 
-const Header = ({ cartCount, onCartClick }) => (
+const Header = ({ cartCount, onCartClick, onDaiquiriClick }) => (
   <header className="sf-header">
     <div className="sf-header-inner">
       <nav className="sf-nav">
         <a href="#shop">Shop</a>
-        <a href="#daiquiris">Daiquiris</a>
+        <a href="#daiquiris" onClick={e => { e.preventDefault(); onDaiquiriClick?.(); }}>Daiquiris</a>
         <a href="#spirits">Spirits</a>
         <a href="#wine">Wine</a>
         <a href="#events">Events</a>

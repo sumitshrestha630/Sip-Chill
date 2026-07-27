@@ -1,52 +1,56 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
 
 :root {
-  --ink:           oklch(0.12 0.035 42);   /* deep mahogany — replaces cold charcoal */
-  --charcoal:     oklch(0.17 0.038 42);
-  --smoke:        oklch(0.22 0.032 44);
-  --ash:          oklch(0.30 0.025 46);
-  --slate:        oklch(0.44 0.018 50);
+  /* ── Cream palette (light theme) ─────────────────────────── */
+  --ink:           oklch(0.97 0.018 74);   /* warm cream — main page bg */
+  --charcoal:      oklch(0.93 0.022 72);   /* slightly deeper cream — elevated surfaces */
+  --smoke:         oklch(0.88 0.028 68);   /* warm tan — cards, inputs */
+  --ash:           oklch(0.80 0.035 64);   /* golden tan — dividers */
+  --slate:         oklch(0.52 0.048 48);   /* warm mid-brown — secondary text */
 
-  --amber:        oklch(0.80 0.15 72);    /* slightly richer gold */
-  --amber-bright: oklch(0.87 0.16 76);
-  --amber-deep:   oklch(0.63 0.14 58);
-  --honey:        oklch(0.90 0.12 86);
+  --amber:         oklch(0.70 0.14 58);    /* amber accent — unchanged */
+  --amber-bright:  oklch(0.77 0.15 62);
+  --amber-deep:    oklch(0.55 0.13 50);
+  --honey:         oklch(0.85 0.11 76);
 
-  --bone:         oklch(0.96 0.018 82);   /* warmer white */
-  --cream:        oklch(0.89 0.022 80);
-  --paper:        oklch(0.97 0.012 82);
+  --bone:          oklch(0.14 0.038 42);   /* dark mahogany — primary text */
+  --cream:         oklch(0.26 0.036 42);   /* medium dark brown — body text */
+  --paper:         oklch(0.99 0.008 80);   /* near-white */
 
-  --burgundy:     oklch(0.40 0.10 25);
-  --forest:       oklch(0.42 0.06 145);
-  --rust:         oklch(0.58 0.13 40);
+  /* On-accent: always dark regardless of theme (text on amber/colored bgs) */
+  --on-accent:     oklch(0.12 0.035 42);
 
-  --success:      oklch(0.68 0.12 150);
-  --warning:      oklch(0.78 0.13 75);
-  --danger:       oklch(0.60 0.18 28);
-  --info:         oklch(0.65 0.09 230);
+  --burgundy:      oklch(0.40 0.10 25);
+  --forest:        oklch(0.42 0.06 145);
+  --rust:          oklch(0.58 0.13 40);
 
-  --bg:           var(--ink);
-  --bg-elev-1:    var(--charcoal);
-  --bg-elev-2:    var(--smoke);
-  --bg-elev-3:    var(--ash);
+  --success:       oklch(0.50 0.12 150);
+  --warning:       oklch(0.65 0.13 65);
+  --danger:        oklch(0.50 0.18 28);
+  --info:          oklch(0.48 0.09 230);
 
-  --fg-1:         var(--bone);
-  --fg-2:         var(--cream);
-  --fg-3:         var(--slate);
-  --fg-disabled:  oklch(0.35 0.006 60);
+  --bg:            var(--ink);
+  --bg-elev-1:     var(--charcoal);
+  --bg-elev-2:     var(--smoke);
+  --bg-elev-3:     var(--ash);
 
-  --border-1:     oklch(0.28 0.01 60 / 0.6);
-  --border-2:     oklch(0.40 0.01 60 / 0.5);
-  --border-amber: oklch(0.78 0.13 75 / 0.35);
+  --fg-1:          var(--bone);
+  --fg-2:          var(--cream);
+  --fg-3:          var(--slate);
+  --fg-disabled:   oklch(0.65 0.02 60);
 
-  --accent:       var(--amber);
-  --accent-hover: var(--amber-bright);
-  --accent-press: var(--amber-deep);
-  --on-accent:    var(--ink);
+  --border-1:      oklch(0.62 0.03 55 / 0.35);
+  --border-2:      oklch(0.50 0.04 52 / 0.45);
+  --border-amber:  oklch(0.70 0.14 58 / 0.45);
 
-  --font-display: "Cormorant Garamond", "EB Garamond", Georgia, serif;
-  --font-body:    "Manrope", "Helvetica Neue", Helvetica, sans-serif;
-  --font-mono:    "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  --accent:        var(--amber);
+  --accent-hover:  var(--amber-bright);
+  --accent-press:  var(--amber-deep);
+  --on-accent:     oklch(0.12 0.035 42);
+
+  --font-display:  "Cormorant Garamond", "EB Garamond", Georgia, serif;
+  --font-body:     "Manrope", "Helvetica Neue", Helvetica, sans-serif;
+  --font-mono:     "JetBrains Mono", "SF Mono", ui-monospace, monospace;
 
   --fs-12:  0.75rem;
   --fs-13:  0.8125rem;
@@ -83,24 +87,24 @@
   --s-20: 80px;
   --s-24: 96px;
 
-  --r-xs: 2px;
-  --r-sm: 4px;
-  --r-md: 8px;
-  --r-lg: 14px;
-  --r-xl: 22px;
+  --r-xs:   2px;
+  --r-sm:   4px;
+  --r-md:   8px;
+  --r-lg:   14px;
+  --r-xl:   22px;
   --r-pill: 999px;
 
-  --shadow-sm:  0 1px 2px oklch(0 0 0 / 0.4);
-  --shadow-md:  0 4px 12px oklch(0 0 0 / 0.35), 0 1px 2px oklch(0 0 0 / 0.5);
-  --shadow-lg:  0 18px 40px -12px oklch(0 0 0 / 0.55), 0 4px 12px oklch(0 0 0 / 0.4);
-  --glow-amber: 0 0 0 1px oklch(0.78 0.13 75 / 0.4), 0 6px 24px oklch(0.78 0.13 75 / 0.18);
-  --inset-hairline: inset 0 1px 0 oklch(1 0 0 / 0.04);
+  --shadow-sm:  0 1px 3px oklch(0 0 0 / 0.10);
+  --shadow-md:  0 4px 14px oklch(0 0 0 / 0.10), 0 1px 3px oklch(0 0 0 / 0.08);
+  --shadow-lg:  0 18px 48px -12px oklch(0 0 0 / 0.14), 0 4px 14px oklch(0 0 0 / 0.08);
+  --glow-amber: 0 0 0 1px oklch(0.70 0.14 58 / 0.4), 0 6px 24px oklch(0.70 0.14 58 / 0.16);
+  --inset-hairline: inset 0 1px 0 oklch(0 0 0 / 0.06);
 
   --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-  --dur-fast:   140ms;
-  --dur-base:   220ms;
-  --dur-slow:   420ms;
+  --dur-fast:    140ms;
+  --dur-base:    220ms;
+  --dur-slow:    420ms;
 }
 
 html, body {
@@ -140,11 +144,11 @@ p, .body { font-family: var(--font-body); font-weight: 400; font-size: var(--fs-
 }
 
 a {
-  color: var(--amber);
+  color: var(--amber-deep);
   text-decoration: none;
   border-bottom: 1px solid var(--border-amber);
   transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
 }
-a:hover { color: var(--amber-bright); border-bottom-color: var(--amber); }
+a:hover { color: var(--amber); border-bottom-color: var(--amber); }
 
-::selection { background: var(--amber); color: var(--ink); }
+::selection { background: var(--amber); color: var(--on-accent); }

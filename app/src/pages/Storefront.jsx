@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import Header from '../components/storefront/Header';
-import Hero from '../components/storefront/Hero';
+import HeroV2 from '../components/storefront/HeroV2';
 import CategoryStrip from '../components/storefront/CategoryStrip';
 import ProductGrid from '../components/storefront/ProductGrid';
 import Gallery from '../components/storefront/Gallery';
 import TikTokCarousel from '../components/storefront/TikTokCarousel';
+import DaiquiriDrawer from '../components/storefront/DaiquiriDrawer';
+import Collections from '../components/storefront/Collections';
+import Trending from '../components/storefront/Trending';
 import Editorial from '../components/storefront/Editorial';
-import Events from '../components/storefront/Events';
 import Reviews from '../components/storefront/Reviews';
 import Footer from '../components/storefront/Footer';
 import CartDrawer from '../components/storefront/CartDrawer';
@@ -17,6 +19,7 @@ import PromoBanner from '../components/storefront/PromoBanner';
 const Storefront = () => {
   const [activeCat, setActiveCat] = useState('all');
   const [cartOpen, setCartOpen] = useState(false);
+  const [daiqOpen, setDaiqOpen] = useState(false);
   const [items, setItems] = useState([]);
 
   const cartCount = items.reduce((s, i) => s + i.qty, 0);
@@ -42,18 +45,22 @@ const Storefront = () => {
   return (
     <>
       <PromoBanner />
-      <Header cartCount={cartCount} onCartClick={() => setCartOpen(true)} />
-      <Hero />
-      <CategoryStrip activeCat={activeCat} setActiveCat={setActiveCat} />
-      <ProductGrid activeCat={activeCat} onAdd={addItem} />
+      <Header cartCount={cartCount} onCartClick={() => setCartOpen(true)} onDaiquiriClick={() => setDaiqOpen(true)} />
+      <HeroV2 />
+      <Collections />
+      <Trending />
+      <div id="shop">
+        <CategoryStrip activeCat={activeCat} setActiveCat={setActiveCat} />
+        <ProductGrid activeCat={activeCat} onAdd={addItem} />
+      </div>
       <Gallery />
       <TikTokCarousel />
       <Editorial />
-      <Events />
       <Reviews />
       <Location />
       <Footer />
       <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} items={items} setQty={setQty} />
+      <DaiquiriDrawer open={daiqOpen} onClose={() => setDaiqOpen(false)} />
     </>
   );
 };
